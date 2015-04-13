@@ -51,6 +51,10 @@ paginate:     3
 sass:
   compressed: true
 
+# Gems
+gems:
+  - jekyll-sitemap
+
 # Rake settings
 post:
   template: "post.txt"
