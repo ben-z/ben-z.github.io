@@ -2,6 +2,7 @@
 layout:     post
 title:			"Custom CSS Log In Form"
 date:				2015-04-11 23:10:39
+update_date: 2015-04-12 20:10:39
 summary:    I happened to come across this task on codersclan the other day and decided to see how competent I am to solving this problem.
 categories: css form login
 ---
