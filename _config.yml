@@ -4,7 +4,7 @@ email:       benzhangniu@gmail.com
 author:      Ben Zhang
 description: "My personal blog about anything majestic."
 baseurl:     ""
-url:         "http://ben-z.github.io"
+url:         "http://benzhang.xyz"
 
 # Google analytics
 google_analytics: UA-61801419-1
