@@ -7,8 +7,8 @@ keywords: "HTML, CSS, Javascript, OpenSCAD, NodeJS, PHP"
 baseurl:     ""
 url:         "https://benzhang.xyz"
 
-# Google analytics
-google_analytics: UA-61801419-1
+# Google analytics - Replaced by CloudFlare
+google_analytics: #UA-61801419-1
 
 # Optional features
 animated:           false
