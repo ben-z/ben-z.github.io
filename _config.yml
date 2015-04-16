@@ -5,7 +5,7 @@ author:      Ben Zhang
 description: "My personal blog about anything majestic."
 keywords: "HTML, CSS, Javascript, OpenSCAD, NodeJS, PHP"
 baseurl:     ""
-url:         "http://benzhang.xyz"
+url:         "https://benzhang.xyz"
 
 # Google analytics
 google_analytics: UA-61801419-1
