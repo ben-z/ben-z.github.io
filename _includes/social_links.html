@@ -19,6 +19,9 @@
     {% if site.linkedin_username %}
       <a class="fa fa-linkedin" href="https://www.linkedin.com/in/{{ site.linkedin_username }}"></a>
     {% endif %}
+    {% if site.cv %}
+      <a class="fa fa-file-text-o" href="{{ site.baseurl }}/{{ site.cv }}"></a>
+    {% endif %}
   </div>
   <div class="right">
     {% if site.bitcoin_url %}

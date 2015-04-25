@@ -29,6 +29,7 @@ linkedin_username: benjaminz
 bitcoin_url:
 paypal_url:
 flattr_button:
+cv: assets/CV-web.pdf
 
 # Post sharing icons
 show_sharing_icons: false
