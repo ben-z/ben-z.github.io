@@ -12,7 +12,7 @@
 //   margin-top: 0.8em;
 // }
 
-p > code, li > code, h3 > code {
+p > code, li > code, h2 > code {
   font-size: 1rem;
   border-radius: 5px;
   padding: 1px 5px;
@@ -21,7 +21,7 @@ p > code, li > code, h3 > code {
   /* border: 1px black; */
   border: 1px solid rgba(0,0,0,0.3);
 }
-h3 > code{
+h2 > code{
   font-size:inherit;
 }
 .share-page {

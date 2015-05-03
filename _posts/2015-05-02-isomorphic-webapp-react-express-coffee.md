@@ -8,7 +8,7 @@ categories: ReactJS Isomorphic
 
 > [React] is a Javascript framework for building user interfaces.
 
-### Introduction
+## Introduction
 
 In our fast-changing world, technology is rapidly taking giant leaps forward. For the people who are just beginning to take part in this new "gold rush" of web development, it is sometimes inevitable to feel a sense of desperation of not being able to keep up with the evolution. In this article, I will attempt to give a brief overview of one of the most-adored features of Facebook's [React] framework—**isomorphism**(a.k.a. server side rendering).
 
@@ -23,7 +23,7 @@ Some terms: [CoffeeScript], [JSX], [getInitialState], [Gulp]
 [JSX]: https://facebook.github.io/react/jsx-compiler.html
 [getInitialState]: https://facebook.github.io/react/docs/component-specs.html#getinitialstate
 
-### What are we creating?
+## What are we creating?
 
 [Demo] | [Code]
 
@@ -32,7 +32,7 @@ We will be creating a minimal skeleton of an isomorphic web application, that is
 [Demo]: https://react-starter-coffee.benzhang.xyz
 [Code]: https://github.com/ben-z/react-starter-coffee-tutorial
 
-### Why are we making an isomorphic web application?
+## Why are we making an isomorphic web application?
 
 The isomorphic approach has many benefits over client-only or server-only applications:
 
@@ -42,7 +42,7 @@ The isomorphic approach has many benefits over client-only or server-only applic
 
 3. Maintainable - the client and the server share the same code, so when something goes wrong, or when a feature needs to be added, only one set of code is altered.
 
-### Step 1: Understanding the Folder Structure
+## Step 1: Understanding the Folder Structure
 
 Everything starts with an idea, then a plan. Here's our plan:
 
@@ -60,51 +60,41 @@ Everything starts with an idea, then a plan. Here's our plan:
 ```
 
 1. The `src` folder is where we place our code.
-
   * `server.coffee` contains code to start the server, it is the only file that is considered non-isomorphic.
-
   * `app` contains the components of our application, everything in here is written in [CoffeeScript] and [JSX]. CoffeeScript is an awesome language that compiles into javascript, and JSX is a syntax that allows us to put HTML code into javascript so it is more readable, more on that later.
-
   * `scss` is where we put our stylesheets. Like its name, we are writing our style code in [SCSS]. If you are not familiar with SCSS, worry not, it is virtually identical to CSS, except for its support for mixins and other features.
-
 2. The `build` folder is where our compiled code lives.
-
   * `server.coffee` is compiled into `server.js`.
-
   * CoffeeScript-JSX files (`.cjsx`) are compiled into Javascript files (`.js`).
-
   * SCSS files (`.scss`) are compiled into CSS files (`.css`).
-
 3. `gulpfile.js` is where we tell the program to compile the files in `src` to `build`, it will be discussed in more depth later on.
-
 4. `package.json` is where we store all the information about our project, such as its name, version, author, dependencies, homepage, and repository.
 
 [SCSS]: http://sass-lang.com/
 
-### Step 2: Set up `package.json`
+## Step 2: Set up `package.json`
 
 1. Make a new folder named **MyApp** and place it on the Desktop.
-
 2. Open **Terminal** or something similar, and type in:
 
-  ```bash
-  $ cd ~/Desktop # Press enter
-  $ cd MyApp # Remember not to type in the dollar sign
-  ```
+    ```bash
+    $ cd ~/Desktop # Press enter
+    $ cd MyApp # Remember not to type in the dollar sign
+    ```
 
 3. Then execute:
 
-  ```bash
-  $ npm init
-  ```
+    ```bash
+    $ npm init
+    ```
 
-  This allows us to enter our information about the application. Follow the prompt.
+    This allows us to enter our information about the application. Follow the prompt.
 
-  ![Output of 'npm init']({{site.url}}/assets/isomorphic-webapp-react-express-coffee/npm-init.png)
+    ![Output of 'npm init']({{site.url}}/assets/isomorphic-webapp-react-express-coffee/npm-init.png)
 
 4. Check inside the **MyApp** folder, you should see a file named `package.json`.
 
-### Step 3: Create `Server.coffee`
+## Step 3: Create `Server.coffee`
 
 Now we can set up our server script, and we will be using [Express] as our server framework.
 
@@ -116,41 +106,36 @@ Now we can set up our server script, and we will be using [Express] as our serve
 
 4. The code:
 
-  ```coffeescript
-  # Express server
-  express = require 'express'
-  # Create an Express object named 'app'
-  app = express()
-  # Port of the server
-  port = process.env.PORT || 3000
-  # Entry point of our app
-  index = require './app/index'
+    ```coffeescript
+    # Express server
+    express = require 'express'
+    # Create an Express object named 'app'
+    app = express()
+    # Port of the server
+    port = process.env.PORT || 3000
+    # Entry point of our app
+    index = require './app/index'
 
-  # serve static files
-  app.use '/js', express.static(__dirname+'/'+(process.env.JS_FOLDER || 'app'))
-  app.use '/css', express.static(__dirname+'/'+(process.env.CSS_FOLDER || 'css'))
+    # serve static files
+    app.use '/js', express.static(__dirname+'/'+(process.env.JS_FOLDER || 'app'))
+    app.use '/css', express.static(__dirname+'/'+(process.env.CSS_FOLDER || 'css'))
 
-  # This starts the server
-  app.listen port, ->
-    console.log 'Listening on http://localhost:' + port
-  ```
+    # This starts the server
+    app.listen port, ->
+      console.log 'Listening on http://localhost:' + port
+    ```
 
-  Above snippet should be fairly straight-forward:
-
+    Above snippet should be fairly straight-forward:
     * We create an `app` object from the `express` library.
-
     * We specify the server port from an environment variable with a fallback to port `3000`.
-
     * We set the entry point of this app as `./app/index` (the `.cjsx` extension is omitted because Express is smart enough to figure it out.)
-
     * The `express.static` functions tell the express app to server static `js` and `css` contents to the client, fulfilling our 'isomorphic' principle.
-
     * `app.listen` starts the server.
 
 [Express]: http://expressjs.com/
 [Atom]: https://atom.io/
 
-### Step 4: The `app` Folder
+## Step 4: The `app` Folder
 
 Since we have just created the server code, we are ready to dive into the real application, the React components.
 
@@ -159,93 +144,91 @@ Since we have just created the server code, we are ready to dive into the real a
 1. Create an **app** folder in **src**.
 
 2. Create `index.cjsx` in the folder.
-
   * `.cjsx` stands for **CoffeeScript JSX**. It combines these two awesome utilities into one file.
-
 3. The contents of `index.cjsx`:
 
-  ```coffeescript
-  # Node does not have a define function, so we use amdefine
-  if typeof define != 'function'
-    define = require('amdefine')(module)
+    ```coffeescript
+    # Node does not have a define function, so we use amdefine
+    if typeof define != 'function'
+      define = require('amdefine')(module)
 
-  # RequireJS implementation, works on Node as well as in the browser
-  define (require) ->
+    # RequireJS implementation, works on Node as well as in the browser
+    define (require) ->
 
-    React = require('react')
+      React = require('react')
 
-    # Index is a wrapper for all components of the website
-    Index = React.createClass(
-      # Specifying prop types
-      propTypes:
-        component: React.PropTypes.string.isRequired
-        title: React.PropTypes.string
-        data: React.PropTypes.object
+      # Index is a wrapper for all components of the website
+      Index = React.createClass(
+        # Specifying prop types
+        propTypes:
+          component: React.PropTypes.string.isRequired
+          title: React.PropTypes.string
+          data: React.PropTypes.object
 
-      # Render the template and pass data to child
-      render: ->
-        # The component should always have the same name as the folder
-        C = require './components/' + @props.component + '/' + @props.component
-        # Get the title, use default if null
-        t = @props.title or 'React Coffeescript Starter Template'
-        # Get default props for child, use {} if null
-        data = @props.data or {}
-        # Pre-render content
-        preRendered = React.renderToString(<C {...data} />)
-        # Render script for the client
-        s = '
-        require.config({
-            baseUrl: "/js/",
-            paths:{
-                "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/react",
-            },
-            waitSeconds: 7
-        });
+        # Render the template and pass data to child
+        render: ->
+          # The component should always have the same name as the folder
+          C = require './components/' + @props.component + '/' + @props.component
+          # Get the title, use default if null
+          t = @props.title or 'React Coffeescript Starter Template'
+          # Get default props for child, use {} if null
+          data = @props.data or {}
+          # Pre-render content
+          preRendered = React.renderToString(<C {...data} />)
+          # Render script for the client
+          s = '
+          require.config({
+              baseUrl: "/js/",
+              paths:{
+                  "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/react",
+              },
+              waitSeconds: 7
+          });
 
-        require(["react","components/'+@props.component+'/'+@props.component+'"], function(React, page){
-          React.render(
-            React.createElement(page,'+safeStringify(data)+'),
-            document.getElementById("content")
-          );
-        });';
+          require(["react","components/'+@props.component+'/'+@props.component+'"], function(React, page){
+            React.render(
+              React.createElement(page,'+safeStringify(data)+'),
+              document.getElementById("content")
+            );
+          });';
 
-        return (
-          <html>
-            <head>
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <title>{t}</title>
-              <link rel="stylesheet" href="css/main.css" />
-            </head>
-            <body>
-              <div id="content" dangerouslySetInnerHTML={__html:preRendered} />
-              <script data-main="index" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.js"></script>
-              <script dangerouslySetInnerHTML={__html:s} />
-            </body>
-          </html>
-        )
-    )
+          return (
+            <html>
+              <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <title>{t}</title>
+                <link rel="stylesheet" href="css/main.css" />
+              </head>
+              <body>
+                <div id="content" dangerouslySetInnerHTML={__html:preRendered} />
+                <script data-main="index" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.js"></script>
+                <script dangerouslySetInnerHTML={__html:s} />
+              </body>
+            </html>
+          )
+      )
 
-    # A better JSON.stringify
-    safeStringify = (obj) ->
-      JSON.stringify(obj)
-              .replace(/<\/script/g, '<\\/script')
-              .replace(/<!--/g, '<\\!--');
+      # A better JSON.stringify
+      safeStringify = (obj) ->
+        JSON.stringify(obj)
+                .replace(/<\/script/g, '<\\/script')
+                .replace(/<!--/g, '<\\!--');
 
-    return Index
+      return Index
 
-  ```
+    ```
 
-  The `define = require('amdefine')(module)` at the top makes isomorphism possible: the client-side Javascript doesn't support the `require` keyword, so we have to bring it in with [RequireJS], but at the same time, the server (NodeJS) doesn't support the `define` keyword of RequireJS, so we need to use the `amdefine` package. The `if typeof define != 'function'` means "if the `define` keyword is not present(on the server), then we use the `amdefind` package."
+    The `define = require('amdefine')(module)` at the top makes isomorphism possible: the client-side Javascript doesn't support the `require` keyword, so we have to bring it in with [RequireJS], but at the same time, the server (NodeJS) doesn't support the `define` keyword of RequireJS, so we need to use the `amdefine` package. The `if typeof define != 'function'` means "if the `define` keyword is not present(on the server), then we use the `amdefind` package."
 
-  **Index** accepts three props:
+    **Index** accepts three props:
 
-  1. the `name` of the child component
+    1. the `name` of the child component
 
-  2. the `title` of the page
+    2. the `title` of the page
 
-  3. the `props` of the child component
+    3. the `props` of the child component
 
-  The rest of the code should be straight-forward if you have previous experiences with React. The `s` variable contains client javascript and is injected into client HTML so that it can be triggered in the browser.
+    The rest of the code should be straight-forward if you have previous experiences with React. The `s` variable contains client javascript and is injected into client HTML so that it can be triggered in the browser.
 
 [RequireJS]: http://requirejs.org/
 
@@ -329,7 +312,7 @@ Since we have just created the server code, we are ready to dive into the real a
 
     This is a typical React component, with a top bar and a button that greets you when clicked.
 
-### Step 5: Adding a route
+## Step 5: Adding a route
 
   How should the server respond to requests? In this section we will tell the server to display our welcome page.
 
@@ -378,7 +361,7 @@ Since we have just created the server code, we are ready to dive into the real a
     console.log 'Listening on http://localhost:' + port
   ```
 
-### Step 6: Setting Up Gulp
+## Step 6: Setting Up Gulp
 
   This step should be one of the most exciting in the tutorial, because we finally get the see what we've made in action!
 
@@ -477,7 +460,7 @@ Since we have just created the server code, we are ready to dive into the real a
 
     You should get an error message, either `Local gulp not found` or `command not found`. Don't worry, we haven't installed our dependencies.
 
-### Step 7: Dependencies
+## Step 7: Dependencies
 
 Our app depends on other libraries such as Express, React, and Gulp, and we need to tell the app to use them.
 
@@ -497,7 +480,7 @@ $ npm install --save amdefine basscss-sass express react del gulp gulp-cjsx gulp
 
 Note that `gulp` appeared in both commands. It is not an error, we need the global gulp command as well as a local copy of it. The 'node_modules' folder is where all the dependency files live.
 
-### Step 8: Back to Gulp
+## Step 8: Back to Gulp
 
 Now it's time to build our project, run:
 
@@ -515,7 +498,7 @@ Navigate to the URL and you will see your project live! Click on the button and 
 
 ![App without styles]({{site.url}}/assets/isomorphic-webapp-react-express-coffee/app-without-styles.png)
 
-### Step 9: CSS
+## Step 9: CSS
 
 To make our website a bit more beautiful, we will add some styling to it.
 
@@ -525,55 +508,55 @@ To make our website a bit more beautiful, we will add some styling to it.
 
 3. Contents of `main.scss`:
 
-  ```scss
-  @import "https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css";
-  @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
-  body {
-    text-align: center;
-  }
-  a {
-    color:#0074d9;
-    text-decoration:none;
-
-    &:hover {
-      text-decoration:underline
+    ```scss
+    @import "https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css";
+    @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
+    body {
+      text-align: center;
     }
-  }
-  ```
+    a {
+      color:#0074d9;
+      text-decoration:none;
 
-  This is some very simple styling with a font package from [Font Awesome].
+      &:hover {
+        text-decoration:underline
+      }
+    }
+    ```
+
+    This is some very simple styling with a font package from [Font Awesome].
 
 4. Add a script to `gulpfile.js` to compile the stylesheets:
 
-  ```js
-  gulp.task('scss', function () {
-    gulp.src('./src/scss/*.scss')
-      .pipe(sass())
-      .pipe(gulp.dest(buildDir+'css'));
-  });
-  ```
+    ```js
+    gulp.task('scss', function () {
+      gulp.src('./src/scss/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest(buildDir+'css'));
+    });
+    ```
 
-  Don't forget to change the build command so that it compiles `scss`:
+    Don't forget to change the build command so that it compiles `scss`:
 
-  ```js
-  gulp.task('build',['cjsx', 'coffee', 'scss']);
-  ```
+    ```js
+    gulp.task('build',['cjsx', 'coffee', 'scss']);
+    ```
 
-  And the watch command:
+    And the watch command:
 
-  ```js
-  // Watch for file changes
-  gulp.task('watch', function(){
-    gulp.watch('./src/**/*.cjsx', ['cjsx','reload']);
-    gulp.watch('./src/**/*.coffee', ['coffee','reload']);
-    gulp.watch('./src/scss/*.scss', ['scss']);
-    gulp.watch('./src/.env.yml', ['env','reload']);
-  });
-  ```
+    ```js
+    // Watch for file changes
+    gulp.task('watch', function(){
+      gulp.watch('./src/**/*.cjsx', ['cjsx','reload']);
+      gulp.watch('./src/**/*.coffee', ['coffee','reload']);
+      gulp.watch('./src/scss/*.scss', ['scss']);
+      gulp.watch('./src/.env.yml', ['env','reload']);
+    });
+    ```
 
 [Font Awesome]: http://fortawesome.github.io/Font-Awesome/
 
-### Step 10: Wrapping Up
+## Step 10: Wrapping Up
 
 Finally, run:
 
