@@ -2,7 +2,7 @@
 layout:     post
 title:			"Creating an Isomorphic Web Application with Express"
 date:				2015-05-02 13:31:27
-summary:    An brief overview of one of the most-adored features of Facebook's React Framework.
+summary:    A brief overview of one of the most-adored features of Facebook's React Framework.
 categories: ReactJS Isomorphic
 ---
 
