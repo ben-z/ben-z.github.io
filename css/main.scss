@@ -24,14 +24,7 @@ p > code, li > code, h3 > code {
 h3 > code{
   font-size:inherit;
 }
-//
-// // Reset for code blocks
-// code[class^="language-"] {
-//   font-size: inherit;
-//   border-radius: inherit;
-//   padding: inherit;
-//   background-color: inherit;
-//   color: inherit;
-//   /* border: 1px black; */
-//   border: inherit;
-// }
+.share-page {
+  text-align: center;
+  padding: 2em 0 2em 0;
+}
