@@ -36,7 +36,7 @@ We will be creating a minimal skeleton of an isomorphic web application, that is
 
 The isomorphic approach has many benefits over client-only or server-only applications:
 
-1. SEO Friendly - unlike traditional AngularJS applications, isomorphic React components render on the server, which enables web crawlers that don't run client scripts such as the Google bot see the rendered webpage instead of something like `<h1>\{\{TITLE\}\}</h1>`.
+1. SEO Friendly - unlike traditional AngularJS applications, isomorphic React components render on the server, which enables web crawlers that don't run client scripts such as the Google bot see the rendered webpage instead of something like `<h1>{% raw %}{{TITLE}}{% endraw %}</h1>`.
 
 2. Dynamic - after rendering on the server, the static HTML gets sent to the client, and the client automatically appends dynamic components such as event listeners (button click listeners) to the page.
 
