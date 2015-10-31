@@ -9,6 +9,7 @@ _                    _
   name: Ben Zhang
   github: ben-z
   twitter: @ben785314280
+  linkedIn: benjaminz
 
 /* SITE */
   Platforms: GitHub Pages, Jekyll
