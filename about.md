@@ -6,7 +6,7 @@ permalink: /about/
 
 My name is Ben Zhang.
 
-I currently attend [Elgin Park Secondary School](http://elginpark.net) and will be enrolled in the Business Administration and Computer Science Double Degree Program at [University of Waterloo](https://uwaterloo.ca/) in a couple of months.
+I am currently enrolled in the Business Administration and Computer Science Double Degree Program at the [University of Waterloo](https://uwaterloo.ca/).
 
 Here's a list of things I enjoy doing:
 
