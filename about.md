@@ -6,7 +6,7 @@ permalink: /about/
 
 My name is Ben Zhang.
 
-I am currently enrolled in the Business Administration and Computer Science Double Degree Program at the [University of Waterloo](https://uwaterloo.ca/).
+I am currently enrolled in the [Business Administration and Computer Science Double Degree](https://uwaterloo.ca/find-out-more/programs/business-administration-computer-science-double-degree) Program at the [University of Waterloo](https://uwaterloo.ca/).
 
 Here's a list of things I enjoy doing:
 
