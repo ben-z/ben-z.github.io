@@ -52,10 +52,12 @@ permalink:    pretty
 paginate:     3
 sass:
   compressed: true
+  sass_dir: _sass
 
 # Gems
 gems:
   - jekyll-sitemap
+  - jekyll-paginate
 
 # Rake settings
 post:
