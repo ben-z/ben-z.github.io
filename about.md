@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-<img src="https://avatars1.githubusercontent.com/u/5977478" alt="Me" style="width: 200px; border-radius: 10px;user-drag: none;user-select: none;-moz-user-select: none;-webkit-user-drag: none;-webkit-user-select: none;-ms-user-select: none;float:right;" />
+<img src="//avatars1.githubusercontent.com/u/5977478" alt="Me" style="width: 200px; border-radius: 10px;user-drag: none;user-select: none;-moz-user-select: none;-webkit-user-drag: none;-webkit-user-select: none;-ms-user-select: none;float:right;" />
 
 My name is Ben Zhang.
 
