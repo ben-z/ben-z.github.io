@@ -4,7 +4,7 @@ email:       benzhangniu@gmail.com
 author:      Ben Zhang
 description: "My personal blog about anything majestic."
 keywords: "HTML, CSS, Javascript, OpenSCAD, NodeJS, PHP"
-baseurl:     "/~ctzhang/ben-z.github.io"
+baseurl:     "/~ctzhang/ben-z.github.io/"
 url:         "https://www.student.cs.uwaterloo.ca/~ctzhang/ben-z.github.io"
 
 # Google analytics - Replaced by CloudFlare
