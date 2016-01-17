@@ -90,7 +90,7 @@ Everything starts with an idea, then a plan. Here's our plan:
 
     This allows us to enter our information about the application. Follow the prompt.
 
-    ![Output of 'npm init']({{site.baseurl}}/assets/isomorphic-webapp-react-express-coffee/npm-init.png)
+    ![Output of 'npm init']({{site.baseurl}}assets/isomorphic-webapp-react-express-coffee/npm-init.png)
 
 4. Check inside the **MyApp** folder, you should see a file named `package.json`.
 
@@ -496,7 +496,7 @@ $ node build/server.js
 
 Navigate to the URL and you will see your project live! Click on the button and it says 'hiii'.
 
-![App without styles]({{site.baseurl}}/assets/isomorphic-webapp-react-express-coffee/app-without-styles.png)
+![App without styles]({{site.baseurl}}assets/isomorphic-webapp-react-express-coffee/app-without-styles.png)
 
 ## Step 9: CSS
 
@@ -573,7 +573,7 @@ $ gulp develop
 
 You will see that the project is prettier than ever before!
 
-![The pretty app]({{site.baseurl}}/assets/isomorphic-webapp-react-express-coffee/the-pretty-app.png)
+![The pretty app]({{site.baseurl}}assets/isomorphic-webapp-react-express-coffee/the-pretty-app.png)
 
 
 ### Conclusion

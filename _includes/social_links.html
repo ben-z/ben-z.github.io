@@ -6,7 +6,7 @@
     {% if site.stackoverflow_id %}
       <a class="fa fa-stack-overflow" title="{{ site.stackoverflow_id }} on Stack Overflow" href="https://stackoverflow.com/users/{{ site.stackoverflow_id }}"></a>
     {% endif %}
-    <a class="fa fa-rss" title="RSS Feed" href="{{ "/feed.xml" | prepend: site.baseurl }}"></a>
+    <a class="fa fa-rss" title="RSS Feed" href="{{ "feed.xml" | prepend: site.baseurl }}"></a>
     {% if site.twitter_username %}
       <a class="fa fa-twitter" title="@{{ site.twitter_username }} on Twitter" href="https://twitter.com/{{ site.twitter_username }}"></a>
     {% endif %}
@@ -20,7 +20,7 @@
       <a class="fa fa-linkedin" title="{{ site.linkedin_username }} on LinkedIn" href="https://www.linkedin.com/in/{{ site.linkedin_username }}"></a>
     {% endif %}
     {% if site.cv %}
-      <a class="fa fa-file-text-o" title="Curriculum Vitae" href="{{ site.baseurl }}/{{ site.cv }}"></a>
+      <a class="fa fa-file-text-o" title="Curriculum Vitae" href="{{ site.baseurl }}{{ site.cv }}"></a>
     {% endif %}
   </div>
   <div class="right">
