@@ -29,7 +29,7 @@ Some terms: [CoffeeScript], [JSX], [getInitialState], [Gulp]
 
 We will be creating a minimal skeleton of an isomorphic web application, that is, a React application that pre-renders on the server.
 
-[Demo]: https://react-starter-coffee.benzhang.xyz
+[Demo]: http://react-starter-coffee.herokuapp.com/
 [Code]: https://github.com/ben-z/react-starter-coffee-tutorial
 
 ## Why are we making an isomorphic web application?
