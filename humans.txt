@@ -8,7 +8,7 @@ _                    _
 /* ME */
   name: Ben Zhang
   github: ben-z
-  twitter: @ben785314280
+  twitter: @un1c0rnioz
   linkedIn: benjaminz
 
 /* SITE */
