@@ -1,0 +1,7 @@
+/* THANKS */
+  Alex Li for the cover image (taken at  WWDC 2019).
+  https://yuhuili.com
+
+/* SITE */
+
+  First commit: Oct 5, 2019
