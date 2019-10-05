@@ -1,27 +1,93 @@
----
-layout: default
----
+<!doctype html>
 
-<div class="home">
+<html lang="en">
 
-  <div class="posts">
-    {% for post in paginator.posts %}
-      <div class="post" itemscope itemtype="http://schema.org/Article">
-        <a href="{{ post.url | prepend: site.baseurl | replace: '//','/' }}" class="post-link">
-          <meta itemprop="datePublished" content="{{ page.date | date: "%F" }}"/>
-          <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-          <h3 class="h2 post-title" itemprop="headline">{{ post.title }}</h3>
-          <p class="post-summary" itemprop="description">
-            {% if post.summary %}
-              {{ post.summary }}
-            {% else %}
-              {{ post.excerpt }}
-            {% endif %}
-          </p>
-        </a>
-      </div>
-    {% endfor %}
-  </div>
+<head>
+    <meta charset="utf-8">
 
-  {% include pagination.html %}
-</div>
+    <title>Ben Zhang</title>
+    <meta name="description" content="Ben's Playground">
+    <meta name="author" content="Ben Zhang">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            height: 100vh;
+
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/me.jpg");
+
+            /* Position and center the image to scale nicely on all screens */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            color: #fff;
+        }
+
+        body a {
+            color: #fff;
+            font-weight: 300;
+            text-decoration: none;
+        }
+
+        body a:hover {
+            opacity: 0.88;
+        }
+
+        .vwcenter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        #intro {
+            font-size: 3rem;
+            font-weight: 400;
+        }
+
+        .social-icons {
+            text-align: center;
+            font-size: 1.5rem;
+            width: 100%;
+        }
+
+        .social-icons a.fa {
+            padding: 0.2em;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .social-icons a.fa:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="vwcenter">
+        <div>
+            <h1 id="intro">Hello, I'm Ben.</h1>
+            <div class="social-icons">
+                <a class="fa fa-github" title="@ben-z on Github" href="https://github.com/ben-z"></a>
+                <a class="fa fa-stack-overflow" title="4527337 on Stack Overflow"
+                    href="https://stackoverflow.com/users/4527337"></a>
+                <a class="fa fa-twitter" title="@un1c0rnioz on Twitter" href="https://twitter.com/un1c0rnioz"></a>
+                <a class="fa fa-linkedin" title="benjaminz on LinkedIn"
+                    href="https://www.linkedin.com/in/benjaminz"></a>
+                <a class="fa fa-file-text-o" title="Resume" href="assets/CV.pdf"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
